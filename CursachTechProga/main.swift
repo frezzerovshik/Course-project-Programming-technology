@@ -12,11 +12,17 @@
 
 
 import Foundation
-let path = "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/testFile/testFile/main.swift"
-do{
-    let string = try String(contentsOfFile: path , encoding: .utf8)
-    print(string)
+let pause : UInt32 = 30
+var TopGearObject = TopGear(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/tgdata.txt")
+print("Объект издания TopGear успешно создан")
+var User : Controller = Controller()
+
+try TopGearObject.register(NewObserver: User)
+var Exit : Bool = true
+
+while Exit {
+    TopGearObject.checkFile()
+    sleep(pause)
+    print("Пауза кончиналсь ебать")
 }
-catch let error as NSError {
-    print("Ooops! Something went wrong: \(error)")
-}
+

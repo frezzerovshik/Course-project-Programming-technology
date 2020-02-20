@@ -8,9 +8,9 @@
 
 import Foundation
 protocol Subject {
-    static var Observers: [Observer] {get set}
-    static func register(NewObserver : Observer) throws -> Void
-    static func delete(SomeObserverWithId : Int) throws -> Void
-    static func notifyObservers(WithNewIssue: Issue) throws -> Void
-    static func getLastObserverNum() -> Int
+    var Observers: [Observer] {get set}
+    func register(NewObserver : Observer) throws -> Void
+    func delete(SomeObserverWithId : Int) throws -> Void
+    func notifyObservers(WithNewIssue: Issue) throws -> Void
+    func getLastObserverNum() -> Int
 }

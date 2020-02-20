@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32242CAC23FD144C0047634D /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32242CAB23FD144C0047634D /* Controller.swift */; };
+		32242CB123FE8DC30047634D /* NationalGeographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32242CB023FE8DC30047634D /* NationalGeographic.swift */; };
 		3258618623FAF4BE00AC8F7F /* TopGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618023FAF4BD00AC8F7F /* TopGear.swift */; };
 		3258618823FAF4BE00AC8F7F /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618223FAF4BE00AC8F7F /* Subject.swift */; };
 		3258618923FAF4BE00AC8F7F /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618323FAF4BE00AC8F7F /* Issue.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		32242CAB23FD144C0047634D /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		32242CB023FE8DC30047634D /* NationalGeographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalGeographic.swift; sourceTree = "<group>"; };
 		3258617623FAF4A700AC8F7F /* CursachTechProga */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CursachTechProga; sourceTree = BUILT_PRODUCTS_DIR; };
 		3258618023FAF4BD00AC8F7F /* TopGear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopGear.swift; sourceTree = "<group>"; };
 		3258618223FAF4BE00AC8F7F /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -50,6 +52,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32242CAD23FE8D650047634D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3258618423FAF4BE00AC8F7F /* Journal.swift */,
+				3258618523FAF4BE00AC8F7F /* Observer.swift */,
+				3258618223FAF4BE00AC8F7F /* Subject.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		32242CAF23FE8D8B0047634D /* SubjectClasses */ = {
+			isa = PBXGroup;
+			children = (
+				3258618023FAF4BD00AC8F7F /* TopGear.swift */,
+				32242CB023FE8DC30047634D /* NationalGeographic.swift */,
+			);
+			name = SubjectClasses;
+			sourceTree = "<group>";
+		};
 		3258616D23FAF4A700AC8F7F = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +90,10 @@
 		3258617823FAF4A700AC8F7F /* CursachTechProga */ = {
 			isa = PBXGroup;
 			children = (
+				32242CAF23FE8D8B0047634D /* SubjectClasses */,
+				32242CAD23FE8D650047634D /* Protocols */,
 				3258618C23FAF50A00AC8F7F /* main.swift */,
 				3258618323FAF4BE00AC8F7F /* Issue.swift */,
-				3258618423FAF4BE00AC8F7F /* Journal.swift */,
-				3258618523FAF4BE00AC8F7F /* Observer.swift */,
-				3258618223FAF4BE00AC8F7F /* Subject.swift */,
-				3258618023FAF4BD00AC8F7F /* TopGear.swift */,
 				32242CAB23FD144C0047634D /* Controller.swift */,
 			);
 			path = CursachTechProga;
@@ -139,6 +158,7 @@
 			files = (
 				3258618923FAF4BE00AC8F7F /* Issue.swift in Sources */,
 				3258618823FAF4BE00AC8F7F /* Subject.swift in Sources */,
+				32242CB123FE8DC30047634D /* NationalGeographic.swift in Sources */,
 				3258618D23FAF50A00AC8F7F /* main.swift in Sources */,
 				3258618623FAF4BE00AC8F7F /* TopGear.swift in Sources */,
 				3258618B23FAF4BE00AC8F7F /* Observer.swift in Sources */,

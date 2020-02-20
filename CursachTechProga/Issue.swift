@@ -13,6 +13,13 @@ class Issue{
     var releaseDate : String
     var number: String
     var issueTopic: String
+    init () {
+        // empty
+        nameOfJournal = ""
+        releaseDate = ""
+        number = " "
+        issueTopic = " "
+    }
     init(nameOfJournalInit : String , releaseDateInit : String , numberInit : String , issueTopicInit : String){
         self.releaseDate = releaseDateInit
         self.number = numberInit

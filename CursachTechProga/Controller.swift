@@ -9,6 +9,9 @@
 import Foundation
 
 class Controller : Observer{
+    init() {
+        // empty
+    }
     func update(State : Issue) -> Bool {
         let path = "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/ControllerOutputFile.txt"
         do{

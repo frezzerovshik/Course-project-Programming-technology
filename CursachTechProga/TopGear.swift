@@ -3,19 +3,34 @@
 //  cursovayaTechProg
 //
 //  Created by Артем Шарапов on 17.02.2020.
-//  Copyright © 2020 Артем Шарапов. All rights reserved.
+//  Copyright © 2020 Артем Шурупiв. All rights reserved.
 //
 
 import Foundation
+
+func makeIssues(content : [String])-> [Issue]{
+    var returnedList : [Issue] = []
+    for everyIssue in content{
+        let dataPackageForIssue = everyIssue.components(separatedBy: "\n")
+        let issueToAdd = Issue(nameOfJournalInit: "TopGear", releaseDateInit: dataPackageForIssue[0] , numberInit: dataPackageForIssue[1] , issueTopicInit: dataPackageForIssue[2])
+        returnedList.append(issueToAdd)
+    }
+    return returnedList
+}
+
 class TopGear : Journal{
     
     var contentOfFile = String()
     
-    var issuesList: [Issue] = []// Список выпусков
+    var issuesList: [Issue] = [Issue()]// Список выпусков
     
-    static var Observers: [Observer] = [] // Список наблюдателей
+    var Observers: [Observer] = [] // Список наблюдателей
+    
+    
+    var path : String
     
     init(path: String) {
+        
         // Блок чтения файла - содержимое храним для дальнейшей сверки (проверка на изменения)
         do{
             contentOfFile = try String(contentsOfFile: path, encoding: .utf8)
@@ -25,18 +40,15 @@ class TopGear : Journal{
         }
         //Создание выпусков и добавление в массив
         let separatedContent = contentOfFile.components(separatedBy: "\\")
-        for everyIssue in separatedContent{
-            let dataPackageForIssue = everyIssue.components(separatedBy: "\n")
-            let issueToAdd = Issue(releaseDateInit: dataPackageForIssue[0] , numberInit: dataPackageForIssue[1] , issueTopicInit: dataPackageForIssue[2])
-            issuesList.append(issueToAdd)
-        }
+        issuesList = makeIssues(content: separatedContent)
+        self.path = path
     }
     
-    static func register(NewObserver: Observer) throws {  // Добавление наблюдателя
+    func register(NewObserver: Observer) throws {  // Добавление наблюдателя
         Observers.append(NewObserver)
     }
     
-    static func delete(SomeObserverWithId : Int) throws {  // Удаление наблюдателя
+    func delete(SomeObserverWithId : Int) throws {  // Удаление наблюдателя
         var wasFound : Bool = false
         if Observers.isEmpty == false {
             for num in 0..<Observers.count{
@@ -54,7 +66,7 @@ class TopGear : Journal{
         }
     }
     
-    static func notifyObservers(WithNewIssue :Issue) throws {
+   func notifyObservers(WithNewIssue :Issue) throws {
         if Observers.isEmpty == false {
             for everyone in Observers {
                 if everyone.update(State : WithNewIssue) == false {
@@ -68,10 +80,36 @@ class TopGear : Journal{
     }
     
     func checkFile() {
-        
+        var updatedContent : String?
+        do{
+            updatedContent = try String(contentsOfFile: path , encoding: .utf8)
+        }
+        catch let error as NSError{
+             print("Some trouble: class TopGear , method checkFile() : \(error)")
+        }
+        if let dataToCheck = updatedContent {
+            if dataToCheck != contentOfFile {
+                contentOfFile = dataToCheck
+                let separatedContent = contentOfFile.components(separatedBy: "\\")
+                let sizeBeforeUpdate = issuesList.count
+                issuesList.removeAll()
+                issuesList = makeIssues(content: separatedContent)
+                for i in sizeBeforeUpdate ..< issuesList.count{
+                    do{
+                      try notifyObservers(WithNewIssue: issuesList[i])
+                    }
+                    catch let error as NSError {
+                        print("Ошибка \(error)")
+                    }
+                }
+            }
+        }
+        else {
+            print("Что-то пошло не так при попытке обратиться к файлу!")
+        }
     }
     
-    static func getLastObserverNum() -> Int {
+    func getLastObserverNum() -> Int {
         return Observers.count-1
     }
 }
