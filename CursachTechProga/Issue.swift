@@ -17,8 +17,8 @@ class Issue{
         // empty
         nameOfJournal = ""
         releaseDate = ""
-        number = " "
-        issueTopic = " "
+        number = ""
+        issueTopic = ""
     }
     init(nameOfJournalInit : String , releaseDateInit : String , numberInit : String , issueTopicInit : String){
         self.releaseDate = releaseDateInit

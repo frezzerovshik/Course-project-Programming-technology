@@ -11,7 +11,7 @@
  */
 
 
-import Foundation
+/*import Foundation
 let pause : UInt32 = 30
 var TopGearObject = TopGear(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/tgdata.txt")
 print("Объект издания TopGear успешно создан")
@@ -25,4 +25,20 @@ while Exit {
     sleep(pause)
     print("Пауза кончиналсь ебать")
 }
+*/
+let testText = """
+first
+first
+first
+first
+second
+second
+second
+second
+"""
+let strings = testText.components(separatedBy: "\n")
+for string in strings {
+    print ("Element of strings array: \(string)")
+}
+
 

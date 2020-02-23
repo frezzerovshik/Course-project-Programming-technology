@@ -15,6 +15,7 @@
 		3258618A23FAF4BE00AC8F7F /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618423FAF4BE00AC8F7F /* Journal.swift */; };
 		3258618B23FAF4BE00AC8F7F /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618523FAF4BE00AC8F7F /* Observer.swift */; };
 		3258618D23FAF50A00AC8F7F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618C23FAF50A00AC8F7F /* main.swift */; };
+		32ED8A6624029B3F00E7D357 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED8A6524029B3F00E7D357 /* functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		3258618423FAF4BE00AC8F7F /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		3258618523FAF4BE00AC8F7F /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		3258618C23FAF50A00AC8F7F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		32ED8A6524029B3F00E7D357 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				3258618C23FAF50A00AC8F7F /* main.swift */,
 				3258618323FAF4BE00AC8F7F /* Issue.swift */,
 				32242CAB23FD144C0047634D /* Controller.swift */,
+				32ED8A6524029B3F00E7D357 /* functions.swift */,
 			);
 			path = CursachTechProga;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				32242CB123FE8DC30047634D /* NationalGeographic.swift in Sources */,
 				3258618D23FAF50A00AC8F7F /* main.swift in Sources */,
 				3258618623FAF4BE00AC8F7F /* TopGear.swift in Sources */,
+				32ED8A6624029B3F00E7D357 /* functions.swift in Sources */,
 				3258618B23FAF4BE00AC8F7F /* Observer.swift in Sources */,
 				3258618A23FAF4BE00AC8F7F /* Journal.swift in Sources */,
 				32242CAC23FD144C0047634D /* Controller.swift in Sources */,
