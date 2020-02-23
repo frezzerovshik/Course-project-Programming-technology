@@ -28,6 +28,4 @@ class TopGear : Journal{
         self.path = path
     }
 }
-/*
- 
- */
+

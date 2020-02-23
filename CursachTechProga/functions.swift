@@ -17,7 +17,7 @@ func makeIssues(content : String) throws -> [Issue]{
     for _ in 0 ..< numberOfIterations {
         let newIssue : Issue = Issue(nameOfJournalInit: stringsFromText[0], releaseDateInit: stringsFromText[1], numberInit: stringsFromText[2], issueTopicInit: stringsFromText[3])
         returnedList.append(newIssue)
-        for i in 0 ..< 4 {
+        for i in 0 ..< 3 {
             stringsFromText.remove(at: i)
         }
     }

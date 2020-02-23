@@ -104,9 +104,9 @@
 		3258617823FAF4A700AC8F7F /* CursachTechProga */ = {
 			isa = PBXGroup;
 			children = (
+				3258618C23FAF50A00AC8F7F /* main.swift */,
 				32242CAF23FE8D8B0047634D /* SubjectClasses */,
 				32242CAD23FE8D650047634D /* Protocols */,
-				3258618C23FAF50A00AC8F7F /* main.swift */,
 				3258618323FAF4BE00AC8F7F /* Issue.swift */,
 				32242CAB23FD144C0047634D /* Controller.swift */,
 				32ED8A6524029B3F00E7D357 /* functions.swift */,

@@ -6,39 +6,35 @@
 //  Copyright © 2020 Артем Шарапов. All rights reserved.
 //
 
-/*
- Создать подписку на журналы. Журналы доступные для подписки: TopGear, NationalGeographic, People, BusinessWeek, PROСпорт, Forbes. Каждый журнал имеет одновременно несколько выпусков, каждый из которых характеризуется: наименование, тема выпуска, дата выпуска, номер журнала, краткое содержание (текст). Для каждого вида журнала создается входной файл, который содержит в себе всю информацию по всем выпускам. Файлы во врмя работы программы обновляются пользователем. Данные из файлов обновляются в программе каждые 30 секунд. Пользователь выбирает, на какие журналы желает подписаться. Как только появляется свежий выпуск – пользователь получает данные. Использовать паттерн «Наблюдатель» для реализации клиента. У пользователя формируется выходной файл, в котором хранятся все данные обо всех журналах, которые он получил.
- */
+import Foundation
 
+var flagNeedToExit : Bool = true;
 
-/*import Foundation
-let pause : UInt32 = 30
-var TopGearObject = TopGear(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/tgdata.txt")
-print("Объект издания TopGear успешно создан")
+var TopGearEd : TopGear = TopGear(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/tgdata.txt")
+var NatGeoEd : NationalGeopraphic = NationalGeopraphic(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/ngdata.txt")
+var PROSportEd : PROSport = PROSport(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/psdata.txt")
+var ForbesEd : Forbes = Forbes(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/fbdata.txt")
+var BWEd : BusinessWeek = BusinessWeek(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/bwdata.txt")
+var PeopleEd : People = People(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/pdata.txt")
+
 var User : Controller = Controller()
 
-try TopGearObject.register(NewObserver: User)
-var Exit : Bool = true
-
-while Exit {
-    TopGearObject.checkFile()
-    sleep(pause)
-    print("Пауза кончиналсь ебать")
+while flagNeedToExit {
+    print("1 - Меню издания TopGear\n2 - Меню издания NationalGeographic\n3 - Меню издания PROСпорт\n4 - Меню издания Forbes\n5 - Меню издания BusinessWeek\n6 - Меню издания People\n7 - Перейти в режим наблюдения")
+    let userChoice = readLine(); let unwrappedUserChoice = (userChoice ?? "0")
+    /*switch unwrappedUserChoice {
+    case "1":
+   
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "0":
+        print("Возникла ошибка при считывании команды с клавиатуры, попробуйте еще раз")
+    default:
+        print("Возникла непредвиденная ошибка, попробуйте еще раз")
+    }*/
 }
-*/
-let testText = """
-first
-first
-first
-first
-second
-second
-second
-second
-"""
-let strings = testText.components(separatedBy: "\n")
-for string in strings {
-    print ("Element of strings array: \(string)")
-}
-
-
+/*Последние мысли - написать функцию регистрации/удаления обсерверов, используя общий интерфейс, функция принимает объект с супертипом сабж*/
