@@ -1,14 +1,14 @@
 //
-//  TopGear.swift
-//  cursovayaTechProg
+//  People.swift
+//  CursachTechProga
 //
-//  Created by Артем Шарапов on 17.02.2020.
-//  Copyright © 2020 Артем Шурупiв. All rights reserved.
+//  Created by Артем Шарапов on 23.02.2020.
+//  Copyright © 2020 Artem Feklistov. All rights reserved.
 //
 
 import Foundation
 
-class TopGear : Journal{
+class People: Journal {
     init(path: String) {
         super.init()
         // Блок чтения файла - содержимое храним для дальнейшей сверки (проверка на изменения)
@@ -16,7 +16,7 @@ class TopGear : Journal{
             contentOfFile = try String(contentsOfFile: path, encoding: .utf8)
         }
         catch let error as NSError{
-            print("Some trouble: class TopGear, method init : \(error)")
+            print("Some trouble: class People, method init : \(error)")
         }
         //Создание выпусков и добавление в массив
         do{
@@ -28,6 +28,3 @@ class TopGear : Journal{
         self.path = path
     }
 }
-/*
- 
- */

@@ -16,7 +16,7 @@ class NationalGeopraphic: Journal {
             contentOfFile = try String(contentsOfFile: path, encoding: .utf8)
         }
         catch let error as NSError{
-            print("Some trouble: class NationalGeographics , method init : \(error)")
+            print("Some trouble: class NationalGeographics, method init : \(error)")
         }
         //Создание выпусков и добавление в массив
         do{

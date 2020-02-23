@@ -7,10 +7,16 @@
 //
 
 import Foundation
-protocol Subject {
-    var Observers: [Observer] {get set}
-    func register(NewObserver : Observer) throws -> Void
-    func delete(SomeObserverWithId : Int) throws -> Void
-    func notifyObservers(WithNewIssue: Issue) throws -> Void
+
+internal protocol Subject {
+    
+    var Observers: [Observer] { get set }
+    
+    func register(NewObserver: Observer) throws
+    
+    func delete(SomeObserverWithId: Int) throws
+    
+    func notifyObservers(WithNewIssue: Issue) throws
+    
     func getLastObserverNum() -> Int
 }

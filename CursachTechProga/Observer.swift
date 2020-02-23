@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol Observer {
-    //Разобраться с возвращаемым типом
-    func update(State:Issue)->Bool
+internal protocol Observer {
+    
+    func update(State: Issue) -> Bool
 }
+

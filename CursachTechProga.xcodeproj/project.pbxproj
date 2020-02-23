@@ -15,6 +15,10 @@
 		3258618A23FAF4BE00AC8F7F /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618423FAF4BE00AC8F7F /* Journal.swift */; };
 		3258618B23FAF4BE00AC8F7F /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618523FAF4BE00AC8F7F /* Observer.swift */; };
 		3258618D23FAF50A00AC8F7F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258618C23FAF50A00AC8F7F /* main.swift */; };
+		326DA5102402A0D800A6F395 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326DA50F2402A0D800A6F395 /* People.swift */; };
+		326DA5122402A0ED00A6F395 /* BusinessWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326DA5112402A0ED00A6F395 /* BusinessWeek.swift */; };
+		326DA5142402A0FE00A6F395 /* PROSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326DA5132402A0FE00A6F395 /* PROSport.swift */; };
+		326DA5162402A10E00A6F395 /* Forbes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326DA5152402A10E00A6F395 /* Forbes.swift */; };
 		32ED8A6624029B3F00E7D357 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ED8A6524029B3F00E7D357 /* functions.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +44,10 @@
 		3258618423FAF4BE00AC8F7F /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		3258618523FAF4BE00AC8F7F /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		3258618C23FAF50A00AC8F7F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		326DA50F2402A0D800A6F395 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		326DA5112402A0ED00A6F395 /* BusinessWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessWeek.swift; sourceTree = "<group>"; };
+		326DA5132402A0FE00A6F395 /* PROSport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROSport.swift; sourceTree = "<group>"; };
+		326DA5152402A10E00A6F395 /* Forbes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forbes.swift; sourceTree = "<group>"; };
 		32ED8A6524029B3F00E7D357 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +77,10 @@
 			children = (
 				3258618023FAF4BD00AC8F7F /* TopGear.swift */,
 				32242CB023FE8DC30047634D /* NationalGeographic.swift */,
+				326DA5132402A0FE00A6F395 /* PROSport.swift */,
+				326DA5152402A10E00A6F395 /* Forbes.swift */,
+				326DA5112402A0ED00A6F395 /* BusinessWeek.swift */,
+				326DA50F2402A0D800A6F395 /* People.swift */,
 			);
 			name = SubjectClasses;
 			sourceTree = "<group>";
@@ -160,9 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3258618923FAF4BE00AC8F7F /* Issue.swift in Sources */,
+				326DA5122402A0ED00A6F395 /* BusinessWeek.swift in Sources */,
 				3258618823FAF4BE00AC8F7F /* Subject.swift in Sources */,
 				32242CB123FE8DC30047634D /* NationalGeographic.swift in Sources */,
 				3258618D23FAF50A00AC8F7F /* main.swift in Sources */,
+				326DA5102402A0D800A6F395 /* People.swift in Sources */,
+				326DA5142402A0FE00A6F395 /* PROSport.swift in Sources */,
+				326DA5162402A10E00A6F395 /* Forbes.swift in Sources */,
 				3258618623FAF4BE00AC8F7F /* TopGear.swift in Sources */,
 				32ED8A6624029B3F00E7D357 /* functions.swift in Sources */,
 				3258618B23FAF4BE00AC8F7F /* Observer.swift in Sources */,
