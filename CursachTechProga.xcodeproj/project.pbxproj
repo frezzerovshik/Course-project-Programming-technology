@@ -70,14 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32242CAD23FE8D650047634D /* Protocols */ = {
+		32242CAD23FE8D650047634D /* Protocols, Superclasses and Other files */ = {
 			isa = PBXGroup;
 			children = (
+				32242CAB23FD144C0047634D /* Controller.swift */,
+				32ED8A6524029B3F00E7D357 /* functions.swift */,
+				326DA52A240409A300A6F395 /* ErrorHandling.swift */,
+				3258618323FAF4BE00AC8F7F /* Issue.swift */,
 				3258618423FAF4BE00AC8F7F /* Journal.swift */,
 				3258618523FAF4BE00AC8F7F /* Observer.swift */,
 				3258618223FAF4BE00AC8F7F /* Subject.swift */,
 			);
-			name = Protocols;
+			name = "Protocols, Superclasses and Other files";
 			sourceTree = "<group>";
 		};
 		32242CAF23FE8D8B0047634D /* SubjectClasses */ = {
@@ -112,21 +116,25 @@
 		3258617823FAF4A700AC8F7F /* CursachTechProga */ = {
 			isa = PBXGroup;
 			children = (
+				3258618C23FAF50A00AC8F7F /* main.swift */,
+				326DA532240414EC00A6F395 /* Resources */,
+				32242CAF23FE8D8B0047634D /* SubjectClasses */,
+				32242CAD23FE8D650047634D /* Protocols, Superclasses and Other files */,
+			);
+			path = CursachTechProga;
+			sourceTree = "<group>";
+		};
+		326DA532240414EC00A6F395 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				326DA530240412E200A6F395 /* bwdata.txt */,
 				326DA52F2404128100A6F395 /* fbdata.txt */,
 				326DA52E24040FDD00A6F395 /* psdata.txt */,
 				326DA52D24040F6A00A6F395 /* ngdata.txt */,
 				326DA52C24040F0200A6F395 /* tgdata.txt */,
 				326DA5312404135100A6F395 /* pdata.txt */,
-				3258618C23FAF50A00AC8F7F /* main.swift */,
-				32242CAF23FE8D8B0047634D /* SubjectClasses */,
-				32242CAD23FE8D650047634D /* Protocols */,
-				3258618323FAF4BE00AC8F7F /* Issue.swift */,
-				32242CAB23FD144C0047634D /* Controller.swift */,
-				32ED8A6524029B3F00E7D357 /* functions.swift */,
-				326DA52A240409A300A6F395 /* ErrorHandling.swift */,
 			);
-			path = CursachTechProga;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

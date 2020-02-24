@@ -17,7 +17,7 @@ class Controller : Observer{
     func update(State : Issue) -> Bool {
         let path = "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/ControllerOutputFile.txt"
         do{
-            print("Новый выпуск журнала \(State.nameOfJournal)!\nНомер выпуска: \(State.number) \nТема выпуска: \(State.issueTopic) \nДата выпуска: \(State.releaseDate)\n")
+            print("Новый выпуск журнала \(State.nameOfJournal)!\nДата выпуска: \(State.releaseDate) \nНомер: \(State.number) \nТема выпуска: \(State.issueTopic)\n")
             let url = URL(fileURLWithPath: path)
             try State.nameOfJournal.write(to: url, atomically: true, encoding: .utf8)
             try State.number.write(to: url, atomically: true, encoding: .utf8)
@@ -31,4 +31,3 @@ class Controller : Observer{
         }
     }
 }
-

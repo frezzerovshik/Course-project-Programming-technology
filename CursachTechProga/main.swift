@@ -8,6 +8,17 @@
 
 import Foundation
 
+enum NameOfJournal {
+    case TopGear
+    case NationalGeographic
+    case PROSport
+    case Forbes
+    case BusinessWeek
+    case People
+}
+
+var listOfSubscribedJournals = [NameOfJournal]()
+
 var flagNeedToExit : Bool = true;
 
 var TopGearEd : TopGear = TopGear(path: "/Users/frez2zerovshik/Documents/Универ/Третий курс/6 семестр/CursachTechProga/CursachTechProga/tgdata.txt")
@@ -20,22 +31,23 @@ var PeopleEd : People = People(path: "/Users/frez2zerovshik/Documents/Униве
 var User : Controller = Controller()
 
 while flagNeedToExit {
-    print("1 - Меню издания TopGear\n2 - Меню издания NationalGeographic\n3 - Меню издания PROСпорт\n4 - Меню издания Forbes\n5 - Меню издания BusinessWeek\n6 - Меню издания People\n7 - Перейти в режим наблюдения\n8 - Прекратить работу программы")
+    print("1 - Меню издания TopGear\n2 - Меню издания NationalGeographic\n3 - Меню издания PROСпорт\n4 - Меню издания Forbes\n5 - Меню издания BusinessWeek\n6 - Меню издания People\n7 - Перейти в режим наблюдения\n8 - Прекратить работу программы\n9 - Просмотреть список изданий, на которые Вы подписаны")
     let unwrappedUserChoice = (readLine() ?? "0")
     switch unwrappedUserChoice {
     case "1":
-        subUnsubToJournal(Ed: TopGearEd, User: User)
+        subUnsubToJournal(type : .TopGear )
     case "2":
-        subUnsubToJournal(Ed: NatGeoEd, User: User)
+        subUnsubToJournal(type : .NationalGeographic)
     case "3":
-        subUnsubToJournal(Ed: PROSportEd, User: User)
+        subUnsubToJournal(type : .PROSport)
     case "4":
-        subUnsubToJournal(Ed: ForbesEd, User: User)
+        subUnsubToJournal(type : .Forbes)
     case "5":
-        subUnsubToJournal(Ed: BWEd, User: User)
+        subUnsubToJournal(type : .BusinessWeek)
     case "6":
-        subUnsubToJournal(Ed: PeopleEd, User: User)
+        subUnsubToJournal(type : .People)
     case "7":
+        //Осталось как-то абстрагировать вот это вот говно
         var flagStopToObserve : Bool = true
         let timeToSleep : UInt32 = 30
         while flagStopToObserve {
@@ -47,6 +59,7 @@ while flagNeedToExit {
             ForbesEd.checkFile()
             BWEd.checkFile()
             PeopleEd.checkFile()
+            print("Пауза длиной \(timeToSleep) секунд завершена!")
             print("Хотите прекратить ожидание новых выпусках? 1 - Да, выйти 2 - Нет, продолжить наблюдать\n")
             let command = (readLine() ?? "0")
             switch command {
@@ -62,6 +75,8 @@ while flagNeedToExit {
         }
     case "8":
         flagNeedToExit = false
+    case "9":
+        print(listOfSubscribedJournals)
     case "0":
         print("Возникла ошибка при считывании команды с клавиатуры, попробуйте еще раз")
     default:

@@ -9,42 +9,77 @@
 import Foundation
 func makeIssues(content : String) throws -> [Issue]{
     var returnedList : [Issue] = []
-    var stringsFromText = content.components(separatedBy: "\n")
-    print("Количество строк в файле \(stringsFromText.count)")
-    if (stringsFromText.count-1) % 4 != 0 {
-        throw FileError.troublesWithContentOfFile
-    }
-    let numberOfIterations = stringsFromText.count / 4
-    for _ in 0 ..< numberOfIterations {
-        let newIssue : Issue = Issue(nameOfJournalInit: stringsFromText[0], releaseDateInit: stringsFromText[1], numberInit: stringsFromText[2], issueTopicInit: stringsFromText[3])
-        returnedList.append(newIssue)
-        for i in 0 ..< 3 {
-            stringsFromText.remove(at: i)
+    var counter : Int = 1
+    let arrayOfLines = content.components(separatedBy: "\n")
+    var bubbleIssue : Issue = Issue()
+    for line in arrayOfLines {
+        switch counter {
+            case 1:
+                bubbleIssue.nameOfJournal = line
+                counter += 1
+            case 2:
+                bubbleIssue.releaseDate = line
+                counter += 1
+            case 3:
+                bubbleIssue.number = line
+                counter += 1
+            case 4:
+                bubbleIssue.issueTopic = line
+                counter = 1
+                returnedList.append(bubbleIssue)
+            default:
+                print("Возникла ошибка при структурировании данных")
         }
     }
     return returnedList
 }
 
-func subUnsubToJournal (Ed : Journal , User : Observer) {
-    print("Вветие команду:\n1 - Подписаться на издание\n2 - Отписаться от уведомлений о новых выпусках\n")
-    let command = readLine()
-    let unwrappedCommand = (command ?? "0")
-    switch unwrappedCommand {
-    case "1":
-            Ed.register(NewObserver: User)
-    case "2":
+func subUnsubToJournal (type : NameOfJournal){
+    print("Введите команду:\n1 - Добавить\n2 - удалить")
+    let command = (readLine() ?? "0")
+    let register = {(Ed : Journal) -> Void in
+        Ed.register(NewObserver: User)
+        listOfSubscribedJournals.append(type)
+    }
+    let remove = {(Ed : Journal) -> Void in
         do {
             try Ed.delete(SomeObserver: User)
+            for i in 0 ..< listOfSubscribedJournals.count {
+                if listOfSubscribedJournals[i] == type {
+                    listOfSubscribedJournals.remove(at: i)
+                    break
+                }
+            }
         }
         catch JournalError.noSubscribers {
-            print("Список подписчиков пуст!")
+            print("Подписчики отсутствуют!")
         }
-        catch {
-            print("Возникла непредвиденная ошибка")
-        }
+        catch {}
+    }
+    var action = {(Ed : Journal)->Void in }
+    switch command {
+    case "1":
+        action = register
+    case "2":
+        action = remove
     case "0":
-        print("Возникла ошибка при вводе команды с клавиатуры")
+        print("Ошибка при считывании команды с клавиатуры")
     default:
-        print("Возникла непредвиденная ошибка")
+        print("Непредвиденная ошибка!")
+    }
+    switch type {
+    case .TopGear:
+        action(TopGearEd)
+    case .BusinessWeek:
+        action(BWEd)
+    case .Forbes:
+        action(ForbesEd)
+    case .NationalGeographic:
+        action(NatGeoEd)
+    case .People:
+        action(PeopleEd)
+    case .PROSport:
+        action(PROSportEd)
     }
 }
+
