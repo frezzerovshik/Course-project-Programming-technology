@@ -10,8 +10,9 @@ import Foundation
 func makeIssues(content : String) throws -> [Issue]{
     var returnedList : [Issue] = []
     var stringsFromText = content.components(separatedBy: "\n")
-    if stringsFromText.count % 4 != 0 {
-        //определить исключение - некорректно заполнен файл
+    print("Количество строк в файле \(stringsFromText.count)")
+    if (stringsFromText.count-1) % 4 != 0 {
+        throw FileError.troublesWithContentOfFile
     }
     let numberOfIterations = stringsFromText.count / 4
     for _ in 0 ..< numberOfIterations {
@@ -30,18 +31,16 @@ func subUnsubToJournal (Ed : Journal , User : Observer) {
     let unwrappedCommand = (command ?? "0")
     switch unwrappedCommand {
     case "1":
-        do {
-            try Ed.register(NewObserver: User)
-        }
-        catch let error as NSError {
-            print("Что-то пошло не так при подписке на издание! \(error)")
-        }
+            Ed.register(NewObserver: User)
     case "2":
         do {
             try Ed.delete(SomeObserver: User)
         }
-        catch let error as NSError {
-            print("Что-то пошло не так при отписке от издания! \(error)")
+        catch JournalError.noSubscribers {
+            print("Список подписчиков пуст!")
+        }
+        catch {
+            print("Возникла непредвиденная ошибка")
         }
     case "0":
         print("Возникла ошибка при вводе команды с клавиатуры")

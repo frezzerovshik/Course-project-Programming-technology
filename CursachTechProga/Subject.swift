@@ -12,7 +12,7 @@ internal protocol Subject {
     
     var Observers: [Observer] { get set }
     
-    func register(NewObserver: Observer) throws
+    func register(NewObserver: Observer) 
     
     func delete(SomeObserver : Observer) throws
     

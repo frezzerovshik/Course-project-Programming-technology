@@ -1,0 +1,12 @@
+BusinessWeek
+25.01.2020
+1
+stock
+BusinessWeek
+25.02.2020
+2
+bills
+BusinessWeek
+25.03.2020
+3
+taxes

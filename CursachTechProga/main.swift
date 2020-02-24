@@ -39,6 +39,7 @@ while flagNeedToExit {
         var flagStopToObserve : Bool = true
         let timeToSleep : UInt32 = 30
         while flagStopToObserve {
+            print("Добро пожаловать в режим наблюдения!\n")
             sleep(timeToSleep)
             TopGearEd.checkFile()
             NatGeoEd.checkFile()

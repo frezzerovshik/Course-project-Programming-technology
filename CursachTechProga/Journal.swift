@@ -17,7 +17,7 @@ class Journal : Subject {
     
     var path : String = String()
     
-    func register(NewObserver: Observer) throws {  // Добавление наблюдателя
+    func register(NewObserver: Observer) {  // Добавление наблюдателя
         var tempObserver = NewObserver
         tempObserver.Id = Observers.count
         Observers.append(tempObserver)
@@ -37,7 +37,7 @@ class Journal : Subject {
             }
         }
         else {
-            // Выкинуть исключение - нет подписчиков
+            throw JournalError.noSubscribers
         }
     }
     
@@ -45,12 +45,12 @@ class Journal : Subject {
         if Observers.isEmpty == false {
             for everyone in Observers {
                 if everyone.update(State : WithNewIssue) == false {
-                    //Выкинуть исключение - возникла ошибка при обновлении данных у подписчиков
+                   throw JournalError.observersUpdateError
                 }
             }
         }
         else {
-            //Выкинуть исключение - нет подписчиков
+            throw JournalError.noSubscribers
         }
     }
     
@@ -70,15 +70,25 @@ class Journal : Subject {
                 do{
                     issuesList = try makeIssues(content: contentOfFile)
                 }
-                catch let error as NSError {
-                    print("Ошибка с заполнением файла! \(error)")
+                catch FileError.troublesWithContentOfFile {
+                    print("Файл заполнен некорректно!")
+                }
+                catch {
+                    print("Возникла непредвиденная ошибка!")
                 }
                 for i in sizeBeforeUpdate ..< issuesList.count{
                     do{
                         try notifyObservers(WithNewIssue: issuesList[i])
+                        print("Оповещения успешно отправлены")
                     }
-                    catch let error as NSError {
-                        print("Ошибка \(error)")
+                    catch JournalError.observersUpdateError {
+                        print("Возникла ошибка при обновлении данных у подписчиков")
+                    }
+                    catch JournalError.noSubscribers{
+                        print("Ошибка - нет ни одного подписчика")
+                    }
+                    catch {
+                        print("Возникла непредвиденная ошибка")
                     }
                 }
             }

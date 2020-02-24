@@ -9,6 +9,8 @@
 import Foundation
 
 class Controller : Observer{
+    var Id: Int = 0
+    
     init() {
         // empty
     }
