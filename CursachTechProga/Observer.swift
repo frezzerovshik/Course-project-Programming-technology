@@ -11,5 +11,7 @@ import Foundation
 internal protocol Observer {
     
     func update(State: Issue) -> Bool
+    
+    var Id : Int {set get}
 }
 

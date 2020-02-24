@@ -23,3 +23,29 @@ func makeIssues(content : String) throws -> [Issue]{
     }
     return returnedList
 }
+
+func subUnsubToJournal (Ed : Journal , User : Observer) {
+    print("Вветие команду:\n1 - Подписаться на издание\n2 - Отписаться от уведомлений о новых выпусках\n")
+    let command = readLine()
+    let unwrappedCommand = (command ?? "0")
+    switch unwrappedCommand {
+    case "1":
+        do {
+            try Ed.register(NewObserver: User)
+        }
+        catch let error as NSError {
+            print("Что-то пошло не так при подписке на издание! \(error)")
+        }
+    case "2":
+        do {
+            try Ed.delete(SomeObserver: User)
+        }
+        catch let error as NSError {
+            print("Что-то пошло не так при отписке от издания! \(error)")
+        }
+    case "0":
+        print("Возникла ошибка при вводе команды с клавиатуры")
+    default:
+        print("Возникла непредвиденная ошибка")
+    }
+}

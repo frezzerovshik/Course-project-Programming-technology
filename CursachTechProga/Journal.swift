@@ -18,15 +18,17 @@ class Journal : Subject {
     var path : String = String()
     
     func register(NewObserver: Observer) throws {  // Добавление наблюдателя
-        Observers.append(NewObserver)
+        var tempObserver = NewObserver
+        tempObserver.Id = Observers.count
+        Observers.append(tempObserver)
     }
     
-    func delete(SomeObserverWithId : Int) throws {  // Удаление наблюдателя
+    func delete(SomeObserver : Observer) throws {  // Удаление наблюдателя
         var wasFound : Bool = false
         if Observers.isEmpty == false {
-            for num in 0..<Observers.count{
-                if num == SomeObserverWithId {
-                    Observers.remove(at: num)
+            for observer in Observers {
+                if observer.Id == SomeObserver.Id {
+                    Observers.remove(at: observer.Id)
                     wasFound = true
                 }
             }

@@ -14,7 +14,7 @@ internal protocol Subject {
     
     func register(NewObserver: Observer) throws
     
-    func delete(SomeObserverWithId: Int) throws
+    func delete(SomeObserver : Observer) throws
     
     func notifyObservers(WithNewIssue: Issue) throws
     
